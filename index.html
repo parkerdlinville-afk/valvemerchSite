@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merch Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="visual-column">
+        <div id="display-area" class="image-square">
+            <div class="placeholder-text">Syncing...</div>
+        </div>
+        <div class="nav-arrows">
+            <button id="prevBtn" aria-label="Previous">‹</button>
+            <button id="nextBtn" aria-label="Next">›</button>
+        </div>
+    </div>
+
+    <div class="info-column">
+        <h1 id="item-name" class="item-name-heading">---</h1>
+        <span class="label">Game</span><div id="item-game" class="value">—</div>
+        <span class="label">Merch Type</span><div id="item-type" class="value">—</div>
+        <span class="label">Year Released</span><div id="item-year" class="value">—</div>
+        <span class="label">Employee Only</span><div id="item-employee" class="value">—</div>
+        
+        <div class="price-container">
+            <div id="item-price" class="price-tag">---</div>
+        </div>
+        
+        <div id="counter" class="counter">0 / 0</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+

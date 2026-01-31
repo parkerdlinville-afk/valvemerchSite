@@ -1,0 +1,134 @@
+:root {
+    --border-thick: 5px solid #000;
+    --text-main: #1a1a1a;
+    --text-muted: #999;
+    --bg-light: #fcfcfc;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: #fff;
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    gap: 60px;
+    max-width: 1000px;
+    width: 90%;
+    padding: 20px;
+    align-items: center;
+}
+
+/* Left Side */
+.visual-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.image-square {
+    width: 400px;
+    height: 400px;
+    border: var(--border-thick);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    background: var(--bg-light);
+    overflow: hidden;
+}
+
+.image-square img { width: 100%; height: 100%; object-fit: cover; }
+
+.placeholder-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ccc;
+    padding: 30px;
+}
+
+.nav-arrows {
+    margin-top: 30px;
+    display: flex;
+    gap: 120px;
+}
+
+.nav-arrows button {
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.nav-arrows button:hover { opacity: 0.4; }
+
+/* Right Side */
+.info-column { flex-grow: 1; max-width: 450px; position: relative; }
+
+.item-name-heading {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 0 0 25px 0;
+    border-bottom: 8px solid #000;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.label { font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: var(--text-muted); display: block; }
+.value { font-size: 1.15rem; font-weight: 500; margin-bottom: 18px; }
+
+/* Price Tooltip Logic */
+.price-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+    width: 100%;
+}
+
+.price-tag {
+    font-size: 2rem;
+    font-weight: 800;
+    cursor: help;
+}
+
+.price-container::after {
+    content: "All prices USD";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.price-container:hover::after { opacity: 1; }
+
+.counter {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #ddd;
+}
+
+@media (max-width: 850px) {
+    .container { flex-direction: column; text-align: center; }
+}
+
